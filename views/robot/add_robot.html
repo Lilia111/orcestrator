@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Добавить робота</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../../static/css/style.css">
+    <link rel="stylesheet" href="../../static/css/menu-style.css">
+    <link rel="stylesheet" href="../../static/css/add_robot.css">
+</head>
+
+<body>
+    {{template "header" .}}
+    <div class="container">
+        <div class="title">
+            <h1>Добавить робота</h1>
+        </div>
+
+        <form action="#" method="post">
+            <div id="main_form">
+                <label for="name" class="form-label">Название робота</label>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Название" id="name" required>
+                </div>
+
+                <label for="path_to_launch_file" class="form-label">Путь до запускаемого файла .robot</label>
+                <div class="input-group mb-3">
+                    <input type="file" class="form-control" id="path_to_launch_file" required>
+                </div>
+
+                <label for="work_status" class="form-label">Включен или выключен</label>
+                <div class="input-group mb-3">
+                    <select class="form-select" id="work_status">
+                        <option selected value="true">Включен</option>
+                        <option value="false">Выключен</option>
+                    </select>
+                </div>
+
+                <label for="ui" class="form-label">Работает с интерфейсом?</label>
+                <div class="input-group mb-3">
+                    <select class="form-select" id="ui">
+                        <option selected value="true">Да</option>
+                        <option value="false">Нет</option>
+                    </select>
+                </div>
+
+                <label for="max_work_time" class="form-label">Максимальное время работы робота</label>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Ввести число в минутах" id="max_work_time"
+                        required>
+                </div>
+
+                <label for="documentation" class="form-label">Путь до спецификации проекта</label>
+                <div class="input-group mb-3">
+                    <input type="file" class="form-control" id="documentation">
+                </div>
+
+                <label for="description" class="form-label">Описание робота</label>
+                <div class="input-group mb-3">
+                    <textarea class="form-control" id="description"></textarea>
+                </div>
+
+                <label for="type_robot" class="form-label">Тип робота</label>
+                <div class="input-group mb-3">
+                    <select class="form-select" id="type_robot">
+                        <option value="time">Работает по времени</option>
+                        <option selected value="task">Работает по задаче</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="robot_time" style="display: none;">
+                <label for="time" class="form-label">Время запуска</label>
+                <div id="container_time">
+                    <div class="input-group mb-3" id="time_robot">
+                        <input type="time" class="form-control" id="time" required>
+                    </div>
+                </div>
+
+                <button type="button" class="btn btn-outline-secondary" onclick="addTime()"><i class="fas fa-plus"></i>
+                    Добавить</button>
+                <br>
+
+                <label for="type_robot_time" class="form-label">Тип робота</label>
+                <div class="input-group mb-3">
+                    <select class="form-select" id="type_robot_time">
+                        <option selected value="every_day">Каждый день</option>
+                        <option value="every_week">Каждую неделю в опрелеленные дни недели</option>
+                        <option value="every_mounth">В определенный день месяца</option>
+                    </select>
+                </div>
+
+                <div id="every_week" style="display: none;">
+                    <label for="btn-group" class="form-label">Выберите дни недели</label>
+                    <br>
+                    <div class="btn-group">
+                        <input type="checkbox" class="btn-check" id="mon">
+                        <label class="btn btn-outline-primary" for="mon">Пн</label>
+
+                        <input type="checkbox" class="btn-check" id="tue">
+                        <label class="btn btn-outline-primary" for="tue">Вт</label>
+
+                        <input type="checkbox" class="btn-check" id="wed">
+                        <label class="btn btn-outline-primary" for="wed">Ср</label>
+
+                        <input type="checkbox" class="btn-check" id="thu">
+                        <label class="btn btn-outline-primary" for="thu">Чт</label>
+
+                        <input type="checkbox" class="btn-check" id="fri">
+                        <label class="btn btn-outline-primary" for="fri">Пт</label>
+
+                        <input type="checkbox" class="btn-check" id="sat">
+                        <label class="btn btn-outline-primary" for="sat">Сб</label>
+
+                        <input type="checkbox" class="btn-check" id="sun">
+                        <label class="btn btn-outline-primary" for="sun">Вс</label>
+
+                    </div>
+                </div>
+
+                <div id="every_mounth" style="display: none;">
+                    <label for="btn-group" class="form-label">Выберите месяцы</label>
+                    <br>
+                    <div class="btn-group">
+                        <input type="checkbox" class="btn-check" id="ja" checked>
+                        <label class="btn btn-outline-primary" for="ja">Январь</label>
+
+                        <input type="checkbox" class="btn-check" id="fe" checked>
+                        <label class="btn btn-outline-primary" for="fe">Февраль</label>
+
+                        <input type="checkbox" class="btn-check" id="ma" checked>
+                        <label class="btn btn-outline-primary" for="ma">Март</label>
+
+                        <input type="checkbox" class="btn-check" id="ap" checked>
+                        <label class="btn btn-outline-primary" for="ap">Апрель</label>
+
+                        <input type="checkbox" class="btn-check" id="may" checked>
+                        <label class="btn btn-outline-primary" for="may">Май</label>
+
+                        <input type="checkbox" class="btn-check" id="jun" checked>
+                        <label class="btn btn-outline-primary" for="jun">Июнь</label>
+
+                        <input type="checkbox" class="btn-check" id="jul" checked>
+                        <label class="btn btn-outline-primary" for="jul">Июль</label>
+
+                        <input type="checkbox" class="btn-check" id="aug" checked>
+                        <label class="btn btn-outline-primary" for="aug">Август</label>
+
+                        <input type="checkbox" class="btn-check" id="sep" checked>
+                        <label class="btn btn-outline-primary" for="sep">Сентябрь</label>
+
+                        <input type="checkbox" class="btn-check" id="oc" checked>
+                        <label class="btn btn-outline-primary" for="oc">Октябрь</label>
+
+                        <input type="checkbox" class="btn-check" id="no" checked>
+                        <label class="btn btn-outline-primary" for="no">Ноябрь</label>
+
+                        <input type="checkbox" class="btn-check" id="de" checked>
+                        <label class="btn btn-outline-primary" for="de">Декабрь</label>
+                    </div>
+
+
+                    <label for="day_launch" class="form-label">Введите дни через ; или интервал</label>
+                    <br>
+                    <label for="day_launch" class="form-label">Дни</label>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" id="day_launch">
+                    </div>
+
+                    <label for="interval" class="form-label">Интервал</label>
+                    <div id="container_interval">
+                        <div class="input-group mb-3" id="interval">
+                            <input type="number" class="form-control" id="day_start">
+                            <span class="input-group-text">-</span>
+                            <input type="number" class="form-control" id="day_stop">
+                        </div>
+
+                    </div>
+
+                    <button type="button" class="btn btn-outline-secondary" onclick="addInterval()"><i
+                            class="fas fa-plus"></i>
+                        Добавить</button>
+                    <br>
+                </div>
+            </div>
+
+
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end" id="save_button" style="display: none;">
+                <button class="btn btn-danger me-md-2" type="button">Отмена</button>
+                <button class="btn btn-primary" type="submit">Сохранить</button>
+            </div>
+
+        </form>
+    </div>
+
+    <script src="../../static/js/add_robot.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

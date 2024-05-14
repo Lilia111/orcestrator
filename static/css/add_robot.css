@@ -1,0 +1,50 @@
+:root {
+    --color-white: #F0FFFF;
+    --color-grey: #353746;
+    --color-dark-blue: #4682B4;
+    --color-dark-blue-darkened: #286496;
+    --color-table-title: #cfe2ff;
+    --color-light-blue: #a9c6de;
+}
+
+.container {
+    padding-bottom: 10vh;
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--color-dark-blue-darkened);
+}
+
+.btn-check:checked+.btn-outline-primary {
+    color: var(--color-white);
+    background-color: var(--color-dark-blue);
+    border-color: var(--color-dark-blue-darkened);
+}
+
+#main_form {
+    border: 0px solid var(--color-grey);
+    border-radius: 10px;
+    padding: 3%;
+    box-shadow: 0 0 20px rgba(53, 55, 70, 0.5);
+    margin-bottom: 5%;
+}
+
+#robot_time {
+    border: 0px solid var(--color-grey);
+    border-radius: 10px;
+    padding: 3%;
+    box-shadow: 0 0 20px rgba(53, 55, 70, 0.5);
+    margin-bottom: 5%;
+}
+
+.btn-outline-secondary {
+    border: none;
+}
+
+#interval {
+    width: 50%;
+}
+
+.btn-group {
+    width: 100%;
+}

@@ -1,0 +1,88 @@
+:root {
+  --color-white: #F0FFFF;
+  --color-grey: #353746;
+  --color-dark-blue: #4682B4;
+  --color-dark-blue-darkened: #286496;
+  --color-table-title: #cfe2ff;
+  --color-light-blue: #a9c6de;
+}
+
+
+
+body {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.container {
+  padding: 5%;
+  padding-top: 10vh;
+  padding-bottom: 10vh;
+}
+
+.btn-primary {
+  background-color: var(--color-dark-blue);
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-dark-blue-darkened);
+}
+
+.title {
+  color: var(--color-grey);
+  margin-bottom: 3%;
+  text-align: center;
+}
+
+
+.heading {
+  background-color: var(--color-table-title);
+}
+
+.toolbar-button {
+  margin: 3px;
+}
+
+.selected {
+  background-color: var(--color-light-blue);
+}
+
+.page-item.active .page-link {
+  background-color: var(--color-dark-blue);
+  border-color: var(--color-dark-blue-darkened);
+}
+
+.page-link {
+  color: var(--color-grey);
+}
+
+.play {
+  color: var(--color-dark-blue);
+}
+.play i {
+  transform: scale(2);
+}
+
+.play:hover {
+  color: #198754;
+  transform: scale(1.5);
+}
+
+thead  {
+  text-align: center;
+}
+
+tr {
+  text-align: center;
+}
+
+.bs-checkbox {
+  display: none;
+}
+
