@@ -1,16 +1,4 @@
 {{define "header"}}
-<!-- <input class="menu-icon" type="checkbox" id="menu-icon" name="menu-icon" />
-<label for="menu-icon"></label>
-<nav class="nav">
-    <ul class="pt-5">
-        <li><a href="/"><i class="fas fa-robot"></i>Список роботов</a></li>
-        <li><a href="/queue/"><i class="fas fa-tasks"></i>Очередь</a></li>
-        <li><a href="/work_robots/"><i class="fas fa-cog"></i>Работающие роботы</a></li>
-        <li><a href="/add_robot/"><i class="fas fa-plus-circle"></i>Добавить робота</a></li>
-        <li><a href="/assets/"><i class="fas fa-archive"></i>Assets</a></li>
-        <li><a href="/credentials/"><i class="fas fa-key"></i>Crendels</a></li>
-    </ul>
-</nav> -->
 
 <div class="hidden_menu">
     <ul>
@@ -44,65 +32,5 @@
         </div>
     </div>
 </div>
-
-
-<!-- <nav class="nav">
-    <div class="menu-toggle">
-        <i class="fas fa-bars"></i>
-        <ul>
-            <li><a href="/"><i class="fas fa-robot"></i></a></li>
-            <li><a href="/queue/"><i class="fas fa-tasks"></i></a></li>
-            <li><a href="/work_robots/"><i class="fas fa-cog"></i></a></li>
-            <li><a href="/add_robot/"><i class="fas fa-plus-circle"></i></a></li>
-            <li><a href="/assets/"><i class="fas fa-archive"></i></a></li>
-            <li><a href="/credentials/"><i class="fas fa-key"></i></a></li>
-        </ul>
-    </div>
-    <div class = "menu">
-        <ul>
-            <li><a href="/"><i class="fas fa-robot"></i>Список роботов</a></li>
-            <li><a href="/queue/"><i class="fas fa-tasks"></i>Очередь</a></li>
-            <li><a href="/work_robots/"><i class="fas fa-cog"></i>Работающие роботы</a></li>
-            <li><a href="/add_robot/"><i class="fas fa-plus-circle"></i>Добавить робота</a></li>
-            <li><a href="/assets/"><i class="fas fa-archive"></i>Assets</a></li>
-            <li><a href="/credentials/"><i class="fas fa-key"></i>Crendels</a></li>
-        </ul>
-    </div>
-</nav>
-
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    var menuToggle = document.querySelector('.menu-toggle');
-    var nav = document.querySelector('.menu');
-
-    menuToggle.addEventListener('click', function() {
-        nav.classList.toggle('open');
-
-        // При клике на кнопку переключения, меняем иконку
-        var icon = menuToggle.querySelector('i');
-        if (nav.classList.contains('open')) {
-            icon.classList.remove('fa-bars');
-            icon.classList.add('fa-times'); // Иконка закрытия
-        } else {
-            icon.classList.remove('fa-times');
-            icon.classList.add('fa-bars'); // Иконка меню
-        }
-    });
-
-    // Закрываем меню при клике вне его области
-    document.addEventListener('click', function(event) {
-        var isClickInsideMenu = menuToggle.contains(event.target) || nav.contains(event.target);
-        if (!isClickInsideMenu && nav.classList.contains('open')) {
-            nav.classList.remove('open');
-            // Возвращаем исходную иконку меню
-            var icon = menuToggle.querySelector('i');
-            icon.classList.remove('fa-times');
-            icon.classList.add('fa-bars');
-        }
-    });
-});
-
-</script> -->
-
 
 {{end}}
