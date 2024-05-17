@@ -35,7 +35,6 @@
 }
 
 .hidden_menu ul li {
-   padding-top: 40%;
    height: 12vh;
    width: 100%;
    text-align: center;
@@ -48,10 +47,15 @@
 .hidden_menu ul li a {
    color: var(--color-white);
    text-decoration: none;
-   display: block;
+   display: flex; /* Делаем элемент flex-контейнером */
+   justify-content: center; /* Выравниваем содержимое по горизонтали по центру */
+   align-items: center; /* Выравниваем содержимое по вертикали по центру */
    padding: 10px;
+   height: 100%; /* Высоту элемента делаем равной 100% высоты родительского li */
+   scale: 150%;
 }
 
-.hidden_menu ul li a {
-   scale: 150%;
+
+.active {
+   background-color: var(--color-dark-blue);
 }

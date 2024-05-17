@@ -1,16 +1,17 @@
 {{define "header"}}
 
 <div class="hidden_menu">
-    <ul>
+    <ul id="menu">
         <li><a data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
             <i class="fas fa-bars"></i>
           </a></li>
         <li><a href="/"><i class="fas fa-robot"></i></a></li>
-        <li><a href="/queue/"><i class="fas fa-tasks"></i></a></li>
-        <li><a href="/work_robots/"><i class="fas fa-cog"></i></a></li>
+        <li><a href="/queue/"><i class="fa-solid fa-timeline"></i></a></li>
+        <li><a href="/work_robots/"><i class="fa-solid fa-play"></i></a></li>
         <li><a href="/add_robot/"><i class="fas fa-plus-circle"></i></a></li>
-        <li><a href="/assets/"><i class="fas fa-archive"></i></a></li>
+        <li><a href="/assets/"><i class="fa-solid fa-gears"></i></a></li>
         <li><a href="/credentials/"><i class="fas fa-key"></i></a></li>
+        <li><a href="/exit/"><i class="fa-solid fa-arrow-right-from-bracket fa-rotate-180"></i></a></li>
     </ul>
 </div>
 
@@ -32,5 +33,18 @@
         </div>
     </div>
 </div>
+
+
+<script>
+const currentLocation = location.href;
+const menuItem = document.querySelectorAll('#menu li a');
+const menuLenght = menuItem.length
+for (let i = 0; i<menuLenght; i++) {
+    if (menuItem[i].href === currentLocation) {
+        menuItem[i].parentElement.className = "active";
+    }
+}
+
+</script>
 
 {{end}}
