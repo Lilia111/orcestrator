@@ -17,12 +17,15 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
+  left: 7%;
 }
 
 .container {
   padding: 5%;
   padding-top: 10vh;
   padding-bottom: 10vh;
+  position: relative;
+  left: 3%;
 }
 
 .btn-primary {
