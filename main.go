@@ -77,7 +77,7 @@ func main() {
 	http.HandleFunc("/queue/", queue_page)
 	http.HandleFunc("/work_robots/", work_robots_page)
 	http.HandleFunc("/add_robot/", add_robot)
-	http.HandleFunc("/asset/", assets)
+	http.HandleFunc("/assets/", assets)
 	http.HandleFunc("/credentials/", credentials)
 	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))
 	fmt.Println("Server started on :8080")
