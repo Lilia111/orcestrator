@@ -7,10 +7,10 @@
     --color-light-blue: #a9c6de;
 }
 
-.container {
+/* .container {
     padding-bottom: 10vh;
     margin-top: 25%;
-}
+} */
 
 .btn-outline-primary:hover {
     background-color: var(--color-dark-blue-darkened);
