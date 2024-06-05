@@ -37,6 +37,13 @@ body {
   background-color: var(--color-dark-blue-darkened);
 }
 
+.btn-check:focus+.btn-primary, .btn-primary:focus {
+  color: #fff;
+  background-color: var(--color-dark-blue-darkened);
+  border-color: var(--color-dark-blue-darkened);
+  box-shadow: 0 0 0 .25rem rgba(70,130,180, .5);
+}
+
 .title {
   color: var(--color-grey);
   margin-bottom: 3%;
