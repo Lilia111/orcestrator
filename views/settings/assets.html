@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,6 +14,7 @@
     <link rel="stylesheet" href="../../static/css/style.css">
     <link rel="stylesheet" href="../../static/css/menu-style.css">
 </head>
+
 <body>
     <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
@@ -20,7 +22,7 @@
         crossorigin="anonymous"></script>
     <script src="https://unpkg.com/bootstrap-table@1.22.4/dist/bootstrap-table.min.js"></script>
     {{template "header" .}}
-    
+
     <div class="container">
         <div class="title">
             <h1>Assets</h1>
@@ -28,9 +30,10 @@
 
         <div id="toolbar" style="display: flex; flex-wrap: nowrap;">
             <div>
-                <button id="add" type="button" class="btn btn-primary toolbar-button" data-bs-toggle="modal" data-bs-target="#addAssetsModal">
+                <button id="add" type="button" class="btn btn-primary toolbar-button" data-bs-toggle="modal"
+                    data-bs-target="#addAssetsModal">
                     <i class="fas fa-plus"></i> Добавить
-                  </button>
+                </button>
             </div>
 
             <div>
@@ -69,41 +72,43 @@
 
     <div class="modal fade" id="addAssetsModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Добавить настройки</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <form method="post">
-                <div id="add_assets">
-                    <label for="name" class="form-label">Название asset</label>
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Название" id="name" required>
-                    </div>
-
-                    
-                    <label for="settings" class="form-label">Настройки</label>
-                    <div class="input-group mb-3">
-                        <textarea class="form-control" id="settings" placeholder="" rows="3" required></textarea>
-                    </div>
-
-                    <label for="settings" class="form-label">Описание настройки</label>
-                    <div class="input-group mb-3">
-                        <textarea class="form-control" id="settings" placeholder="" rows="3"></textarea>
-                    </div>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Добавить настройки</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-              
+                <div class="modal-body">
+                    <form method="post">
+                        <div id="add_assets">
+                            <label for="name" class="form-label">Название asset</label>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" placeholder="Название" id="name" required>
+                            </div>
+
+
+                            <label for="settings" class="form-label">Настройки</label>
+                            <div class="input-group mb-3">
+                                <textarea class="form-control" id="settings" placeholder="" rows="3"
+                                    required></textarea>
+                            </div>
+
+                            <label for="settings" class="form-label">Описание настройки</label>
+                            <div class="input-group mb-3">
+                                <textarea class="form-control" id="settings" placeholder="" rows="3"></textarea>
+                            </div>
+                        </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                    <button type="submit" class="btn btn-primary">Сохранить</button>
+                </div>
+                </form>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
-                <button type="submit" class="btn btn-primary">Сохранить</button>
-            </div>
-        </form>
-          </div>
         </div>
-      </div>
+    </div>
 
     <script src="../../static/js/table_robots.js" defer></script>
 </body>
+
 </html>
