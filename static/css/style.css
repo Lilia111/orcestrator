@@ -3,6 +3,7 @@
   --color-grey: #353746;
   --color-dark-blue: #4682B4;
   --color-dark-blue-darkened: #286496;
+  ---color-blue-border: #0579FC;
   --color-table-title: #cfe2ff;
   --color-light-blue: #a9c6de;
 }
@@ -96,3 +97,26 @@ tr {
   display: none;
 }
 
+/*Стили для модальных форм*/
+.form-control:valid {
+    border: 2px solid #ced4da;
+}
+
+.form-control:invalid {
+  border-color: var(---color-blue-border);
+}
+
+.form-label {
+    display: block;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.modal-title {
+  font-weight: bold;
+  font-size: 28px;
+  color: var(--color-grey);
+}

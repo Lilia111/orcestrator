@@ -74,19 +74,19 @@
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Добавить настройки</h5>
+                    <h5 class="modal-title">Добавить настройки</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <form method="post">
-                        <div class="form_modal">
-                            <label for="name" class="form-label">Название asset</label>
+                        <div>
+                            <label for="name" class="form-label required-label">Название asset</label>
                             <div class="input-group mb-3">
                                 <input type="text" class="form-control" placeholder="Название" id="name" required>
                             </div>
 
 
-                            <label for="settings" class="form-label">Настройки</label>
+                            <label for="settings" class="form-label required-label">Настройки</label>
                             <div class="input-group mb-3">
                                 <textarea class="form-control" id="settings" placeholder="" rows="3"
                                     required></textarea>
