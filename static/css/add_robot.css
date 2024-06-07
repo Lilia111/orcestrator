@@ -49,3 +49,11 @@
 .btn-group {
     width: 100%;
 }
+
+.form-control:disabled {
+    background-color: white;
+}
+
+.form-control:disabled::placeholder {
+    color: black;
+}
