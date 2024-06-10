@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"html/template"
 	"net/http"
+	"orcestrator-kamin/internal/config"
 )
 
 func home_page(w http.ResponseWriter, r *http.Request) {
@@ -73,6 +74,9 @@ func add_robot(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
+	cfg := config.LoadConfig()
+	fmt.Println(cfg)
+
 	http.HandleFunc("/", home_page)
 	http.HandleFunc("/queue/", queue_page)
 	http.HandleFunc("/work_robots/", work_robots_page)
@@ -81,5 +85,5 @@ func main() {
 	http.HandleFunc("/credentials/", credentials)
 	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))
 	fmt.Println("Server started on :8080")
-	http.ListenAndServe(":8080", nil)
+	http.ListenAndServe(cfg.Server.Port, nil)
 }
